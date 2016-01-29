@@ -13,6 +13,7 @@
 		B21653EB1C5AD8E200B98123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21653E91C5AD8E200B98123 /* Main.storyboard */; };
 		B21653ED1C5AD8E200B98123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21653EC1C5AD8E200B98123 /* Assets.xcassets */; };
 		B21653F01C5AD8E200B98123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21653EE1C5AD8E200B98123 /* LaunchScreen.storyboard */; };
+		B2A4C7BD1C5AE041008C0E17 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4C7BC1C5AE041008C0E17 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B21653EC1C5AD8E200B98123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21653EF1C5AD8E200B98123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21653F11C5AD8E200B98123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2A4C7BC1C5AE041008C0E17 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		DA049F8B3876B5793DCF1FBF /* Pods-insta-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-insta-clone/Pods-insta-clone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				B21653E51C5AD8E200B98123 /* AppDelegate.swift */,
 				B21653E71C5AD8E200B98123 /* PhotosViewController .swift */,
 				B21653E91C5AD8E200B98123 /* Main.storyboard */,
+				B2A4C7BC1C5AE041008C0E17 /* PhotoCell.swift */,
 				B21653EC1C5AD8E200B98123 /* Assets.xcassets */,
 				B21653EE1C5AD8E200B98123 /* LaunchScreen.storyboard */,
 				B21653F11C5AD8E200B98123 /* Info.plist */,
@@ -123,6 +126,7 @@
 				TargetAttributes = {
 					B21653E11C5AD8E200B98123 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 538ABTBZHN;
 					};
 				};
 			};
@@ -211,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21653E81C5AD8E200B98123 /* PhotosViewController .swift in Sources */,
+				B2A4C7BD1C5AE041008C0E17 /* PhotoCell.swift in Sources */,
 				B21653E61C5AD8E200B98123 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,10 +328,13 @@
 			baseConfigurationReference = DA049F8B3876B5793DCF1FBF /* Pods-insta-clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "insta-clone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Danyal-Rizvi.insta-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -335,10 +343,13 @@
 			baseConfigurationReference = 92237FCB66B0D718C1857C9B /* Pods-insta-clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "insta-clone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Danyal-Rizvi.insta-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
