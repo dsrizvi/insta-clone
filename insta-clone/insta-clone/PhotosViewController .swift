@@ -67,16 +67,58 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
         let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoCell
         let post = posts![indexPath.row]
-        print(post)
         let images = (post["images"] as! NSDictionary)
         let url = (images["standard_resolution"] as! NSDictionary)["url"] as! String
-        print(url)
         let photoURL = NSURL(string: url)
        
         cell.photoView.setImageWithURL(photoURL!)
-
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView,
+        viewForHeaderInSection section: Int) -> UIView?{
+            
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
+        profileView.layer.borderWidth = 1;
+        
+        // Use the section number to get the right URL
+        let post = posts![indexPath.section]
+        let user = (post["user"] as! NSDictionary)
+        let userphotoURL = user["profile_picture"] as! String
+        let photoURL = NSURL(string: userphotoURL)
+
+         profileView.setImageWithURL(userphotoURL)
+        
+        headerView.addSubview(profileView)
+        
+        // Add a UILabel for the username here
+        
+        return headerView
+    }
+
+    func tableView(tableView: UITableView,
+    estimatedHeightForHeaderInSection section: Int) -> CGFloat{
+    return 20
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let posts = posts{
+            return posts.count
+        }
+        else{
+            return 0
+        }
+    }
+
+    func numberOfRowsInSection(tableView: UITableView) -> Int {
+        return 1
     }
     
 }
